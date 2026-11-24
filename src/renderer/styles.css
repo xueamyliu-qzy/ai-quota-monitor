@@ -1,0 +1,54 @@
+:root {
+  color-scheme: dark;
+  --bg: rgba(18, 22, 28, 0.85);
+  --fg: #e8eef7;
+  --muted: #9aa8bc;
+  font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg);
+  min-height: 100vh;
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+h1 { font-size: 16px; margin: 0; font-weight: 600; }
+.actions { display: flex; gap: 8px; align-items: center; }
+button, select, input {
+  background: rgba(255,255,255,0.08);
+  color: var(--fg);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+button:hover { background: rgba(255,255,255,0.14); cursor: pointer; }
+main { padding: 16px; display: grid; gap: 16px; }
+.platform {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.04);
+}
+.platform h2 { grid-column: 1 / -1; margin: 0; font-size: 14px; }
+.ring-wrap { text-align: center; }
+.ring-label { font-size: 12px; color: var(--muted); margin-top: 4px; }
+.status { font-size: 12px; color: var(--muted); grid-column: 1 / -1; }
+.status.bad { color: #fca5a5; }
+.status.stale { color: #fcd34d; }
+#settings {
+  display: none;
+  padding: 16px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+#settings.open { display: block; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; align-items: center; }
+.hint { color: var(--muted); font-size: 12px; }

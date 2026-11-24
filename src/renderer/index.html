@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self';" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AI 额度监控</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="title">AI 额度监控</h1>
+      <div class="actions">
+        <button id="btn-refresh" type="button">刷新</button>
+        <button id="btn-settings" type="button">设置</button>
+      </div>
+    </header>
+    <main id="platforms"></main>
+    <section id="settings">
+      <div class="row">
+        <label>透明度 <input id="opacity" type="number" min="0.3" max="1" step="0.05" /></label>
+        <label>告警阈值 <input id="threshold" type="number" min="0" max="1" step="0.05" /></label>
+        <label>数据模式
+          <select id="mode">
+            <option value="fake">演示数据</option>
+            <option value="live">真实拉取</option>
+          </select>
+        </label>
+      </div>
+      <div class="row">
+        <select id="plat">
+          <option value="chatgpt">ChatGPT</option>
+          <option value="grok">Grok</option>
+          <option value="gemini">Gemini</option>
+        </select>
+        <select id="kind">
+          <option value="api_key">API Key</option>
+          <option value="session">Session</option>
+          <option value="oauth">OAuth</option>
+        </select>
+        <input id="secret" type="password" placeholder="密钥 / 令牌（不回显已存值）" size="28" />
+        <button id="btn-save" type="button">保存凭据</button>
+        <button id="btn-del" type="button">清除凭据</button>
+      </div>
+      <div class="row hint">
+        ChatGPT：<span data-cred="chatgpt">-</span> ·
+        Grok：<span data-cred="grok">-</span> ·
+        Gemini：<span data-cred="gemini">-</span>
+      </div>
+    </section>
+    <script src="./app.js"></script>
+  </body>
+</html>
